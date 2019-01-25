@@ -1,0 +1,33 @@
+{
+  "name": "mysql-review",
+  "version": "1.0.0",
+  "description": "#Exercise-1 <br /> Install any dependencies you need and write a start script for your server. Build out your express server and route your requests (GET, POST, DELETE) to your controller. Controller functionality can be merely a console.log at this point. Make sure that your requests are hitting your endpoints.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyijulie/mysql-review.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyijulie/mysql-review/issues"
+  },
+  "homepage": "https://github.com/kyijulie/mysql-review#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-loader": "^8.0.5",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "webpack": "^4.29.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.0",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "@babel/preset-react": "^7.0.0"
+  }
+}
