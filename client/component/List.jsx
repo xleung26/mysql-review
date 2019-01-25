@@ -22,7 +22,10 @@ class List extends Component {
   fetchTodos() {
     axios
       .get("/api/todoList", { params: { listName: this.state.listName } })
-      .then(({ data }) => this.setState({ todos: data }))
+      .then(({ data }) => {
+        console.log(data);
+        this.setState({ todos: data });
+      })
       .catch(err => console.log(err));
   }
 
@@ -41,12 +44,12 @@ class List extends Component {
       .catch(err => console.log(err));
   }
 
-  deleteTodo(todo) {
+  deleteTodo(index) {
     axios
       .delete("/api/todoList", {
-        params: { todo, listName: this.state.listName }
+        params: { index, listName: this.state.listName }
       })
-      .then(this.fetchTodos())
+      .then(this.fetchTodos)
       .catch(err => console.log(err));
   }
 
@@ -59,14 +62,9 @@ class List extends Component {
         </form>
         <br />
         <div>
-          {this.state.todos.map((todo, index) => {
-            <ListEntry
-              key={index}
-              todo={todo}
-              index={index}
-              delete={this.deleteTodo}
-            />;
-          })}
+          {this.state.todos.map(todo => (
+            <ListEntry todo={todo} delete={this.deleteTodo} />
+          ))}
         </div>
       </div>
     );

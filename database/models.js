@@ -18,4 +18,4 @@ const Todo = connection.define(
 
 connection.sync({ force: false });
 
-module.exports = Todo;
+module.exports.Todo = Todo;
