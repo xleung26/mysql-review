@@ -19,12 +19,7 @@ class List extends Component {
     this.fetchTodos();
   }
 
-  fetchTodos() {
-    axios
-      .get("/api/todoList", { params: { listName: this.state.listName } })
-      .then(({ data }) => this.setState({ todos: data }))
-      .catch(err => console.log(err));
-  }
+  fetchTodos() {}
 
   handleInput(e) {
     this.setState({
@@ -35,20 +30,9 @@ class List extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const { todo, todos, listName } = this.state;
-    axios
-      .post("/api/todoList", { todo, listName: this.state.listName })
-      .then(this.fetchTodos())
-      .catch(err => console.log(err));
   }
 
-  deleteTodo(index) {
-    axios
-      .delete("/api/todoList", {
-        params: { index, listName: this.state.listName }
-      })
-      .then(this.fetchTodos())
-      .catch(err => console.log(err));
-  }
+  deleteTodo(index) {}
 
   render() {
     return (
