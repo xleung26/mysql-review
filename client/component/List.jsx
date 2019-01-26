@@ -59,9 +59,9 @@ class List extends Component {
         </form>
         <br />
         <div>
-          {this.state.todos.map(todo => {
-            <ListEntry todo={todo} delete={this.deleteTodo} />;
-          })}
+          {this.state.todos.map(todo => (
+            <ListEntry todo={todo} delete={this.deleteTodo} />
+          ))}
         </div>
       </div>
     );
